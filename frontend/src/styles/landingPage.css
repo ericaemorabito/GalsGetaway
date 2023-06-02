@@ -1,0 +1,61 @@
+.landing-page {
+  height: fit-content;
+}
+
+/* Big Background Section */
+
+.big-background {
+  /* background-color: var(--signature); */
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ background-image: linear-gradient(
+    rgba(250, 109, 114),
+    rgba(196, 196, 196, 0.3)
+  ); 
+}
+
+.central-title {
+  color: white;
+  text-align: center;
+}
+
+.central-text {
+  color: white;
+  width: 400px;
+  height: 70px;
+  text-align: center;
+}
+
+/* Polaroid Section */
+
+.polaroid-section {
+  margin: 0px 150px 0px 150px;
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  padding-bottom: 80px;
+}
+
+.polaroid {
+  height: 250px;
+  width: 250px;
+  background-color: red;
+  border: 5px solid white;
+  border-radius: var(--br-form);
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.up {
+  position: relative;
+  bottom: 70px;
+}
+
+
+@media (max-width: 50em) {
+
+}
