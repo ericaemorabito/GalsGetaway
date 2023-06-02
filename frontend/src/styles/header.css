@@ -1,0 +1,58 @@
+header {
+  /* background-color: red; */
+  height: 100px;
+  margin: 0px 100px 0px 100px;
+  display: flex;
+  border-bottom: 1px solid var(--black-25);
+}
+
+/* TODO: Extend border line entire view width, make header stick */
+
+/* Logo and Title */
+.brand {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+/* TODO: See if you can shift nav to right without absolute */
+/* Nav Items */
+.nav {
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 100px;
+  top: 40px;
+}
+
+li {
+  margin-right: 10px;
+}
+
+@media (max-width: 50em){
+  header {
+    height: 75px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .brand {
+    margin-left: 0px;
+  }
+
+  #brand-title {
+    display: none;
+  }
+
+  .nav {
+    right: 10px;
+    top: 28px;
+  }
+
+}

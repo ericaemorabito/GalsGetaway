@@ -1,0 +1,17 @@
+/* TODO: home card styling */
+.trip-card {
+  height: 250px;
+  width: 250px;
+  border-radius: 15px;
+  background-color: var(--black-25);
+}
+
+.card-title {
+  font-size: var(--fs-5);
+  color: var(--black-50);
+}
+
+.card-date {
+  font-size: var(--fs-5);
+  color: var(--black-25);
+}

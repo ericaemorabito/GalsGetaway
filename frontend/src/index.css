@@ -34,6 +34,8 @@
   --br-button: 238px;
   --br-card: 15px;
   --br-form: 5px;
+  
+  --ff-1: 'Manrope', sans-serif;
 }
 
 @media (min-width: 50em){
@@ -59,10 +61,12 @@
   margin: 0;
   padding: 0;
   font: inherit;
+  font-family: var(--ff-1);
 }
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -111,30 +115,122 @@ svg {
   }
 }
 
-/* Utility Classes 
-TO DO:
+/* Utility Classes */
 
-title
-subtitle
-text
-
-button - size, shape, drop shadow, text
-
-form - size, shape, drop shadow, text
-& responsiveness
-*/
+/* TEXT */
 
 .title {
   font-size: var(--fs-1);
   font-weight: var(--fw-bold);
+  color: var(--black-100);
 }
 
 .subtitle {
   font-size: var(--fs-2);
   font-weight: var(--fw-regular);
+  color: var(--black-100);
 }
 
 .text {
   font-size: var(--fs-6);
   font-weight: var(--fw-semi-bold);
+  color: var(--black-100);
+}
+
+/* BUTTON STYLING */
+
+.button {
+  width: 200px;
+  height: 50px;
+  border-radius: 250px;
+  font-size: var(--fs-button);
+  box-shadow: 0px 5px 5px var(--black-25);
+}
+
+.btn-signature {
+  background-color: var(--signature);
+  color: white;
+  border: none;
+}
+
+.btn-light {
+  background-color: white;
+  color: var(--signature);
+  border: 1.5px solid var(--signature);
+}
+
+.btn-red {
+  background-color: var(--red-50);
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+/* Hover effect for all buttons */
+.button:hover,
+.button:focus {
+  box-shadow: 0px 8px 5px var(--black-25);
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  transition-duration: 0.2s;
+}
+
+.button:active {
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+/* Color changes for signature buttons */
+.btn-signature:hover,
+.btn-signature:focus {
+  background-color: var(--signature-75);
+}
+
+.btn-signature:active {
+  background-color: var(--signature);
+}
+
+/* Color changes for light buttons */
+.btn-light:hover,
+.btn-light:focus {
+  background-color: var(--signature-75);
+  color: white;
+}
+
+.btn-signature:active {
+  background-color: white;
+  color: var(--signature);
+}
+
+/* Form */
+.form-label {
+  font-size: var(--fs-6);
+  color: var(--black-25);
+  font-weight: var(--fw-bold);
+}
+
+.input-line {
+  height: 50px;
+  width: 400px;
+  border-radius: var(--br-form);
+}
+
+.input-text {
+  padding: 10px 390px 200px 10px;
+  border-radius: var(--br-form);
+}
+
+.input-light {
+  color: var(--black-100);
+}
+
+@media (max-width: 50em){
+  .input-line {
+    width: 300px;
+  }
+
+  .input-text {
+    padding: 10px 200px 150px 10px;
+  }
 }
