@@ -1,13 +1,14 @@
+/* TODO: fix input-text line start point */
+
 .create-page {
   /* background-color: rgba(238, 204, 210, 0.628); */
   height: 90vh;
   width: 100%;
-  margin: 0px 150px 50px 150px;
+  margin: 0px 100px 50px 150px;
   display: flex;
 }
 
 /* Form */
-
 .form-side {
   /* background-color: rgba(255, 192, 203, 0.17); */
   width: 60%;
@@ -28,7 +29,7 @@
   height: fit-content;
 }
 
-.form-label {
+label {
   font-size: var(--fs-6);
   color: var(--black-50);
   font-weight: var(--fw-bold);
@@ -60,7 +61,10 @@ input:focus {
 
 /* Decorative Panel Side */
 .gradient-side {
-  background-image: linear-gradient(rgba(250, 109, 114), rgba(196, 196, 196, 0.3));
+  background-image: linear-gradient(
+    rgba(250, 109, 114) 50%,
+    rgba(196, 196, 196, 0.3)
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,27 +80,22 @@ input:focus {
   color: white;
 }
 
-@media (max-width: 50em){
+@media (max-width: 50em) {
   .create-page {
     margin: 50px 25px 10px 25px;
   }
 
-  /* .input-line {
-    width: 300px;
-  } */
-
-  .input-text {
-    padding: 10px 200px 75px 10px;
-  }
-
-  .gradient-side {
-    display: none;
+  .trip-form {
+    width: 333px;
   }
 }
 
-/* TODO: responsiveness fixing */
-@media (max-width: 70em){
+@media (max-width: 1255px) {
   .gradient-side {
     display: none;
+  }
+
+  .form-side {
+    width: 100%;
   }
 }

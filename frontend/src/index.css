@@ -2,6 +2,7 @@
   --signature: #FA6D72;
   --signature-75: rgba(250, 109, 114, 0.75);
   --signature-50: rgba(250, 109, 114, 0.50);
+  --deeper-signature: #ED686D;
 
   --black-100: rgba(71, 66, 66, 1);
   --black-75: rgba(85, 80, 80, 0.75);
@@ -88,8 +89,12 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--black-100);
 }
 
 /* Make images easier to work with */
@@ -147,7 +152,14 @@ svg {
   border-radius: 250px;
   font-size: var(--fs-button);
   box-shadow: 0px 5px 5px var(--black-25);
-  margin-top: 25px;
+  margin-top: 20px;
+}
+
+.btn-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-signature {
