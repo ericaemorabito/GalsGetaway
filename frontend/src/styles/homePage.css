@@ -1,0 +1,51 @@
+.home-page {
+  height: fit-content;
+  width: 100%;
+  margin: 50px 150px 50px 150px;
+}
+
+.cards-area {
+  /* background-color: aqua; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trip-card {
+  /* background-color: rgb(230, 198, 229); */
+  width: fit-content;
+  height: fit-content;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.card-image {
+  background-color: rgba(128, 128, 128, 0.511);
+  height: 300px;
+  width: 300px;
+  border-radius: var(--br-card);
+}
+
+.card-text {
+  /* background-color: rgba(100, 234, 100, 0.169); */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 280px;
+}
+
+@media (max-width: 50em){
+  .home-title {
+    text-align: center;
+  }
+
+  .card-image {
+    height: 315px;
+    width: 315px;
+  }
+
+  .card-text {
+    width: 295px;
+    margin-left: 10px;
+  }
+}

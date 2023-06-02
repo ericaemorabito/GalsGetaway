@@ -1,0 +1,102 @@
+.create-page {
+  /* background-color: rgba(238, 204, 210, 0.628); */
+  height: 90vh;
+  width: 100%;
+  margin: 0px 150px 50px 150px;
+  display: flex;
+}
+
+/* Form */
+
+.form-side {
+  /* background-color: rgba(255, 192, 203, 0.17); */
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-page-title {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.trip-form {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: fit-content;
+}
+
+.form-label {
+  font-size: var(--fs-6);
+  color: var(--black-50);
+  font-weight: var(--fw-bold);
+  margin-bottom: 7px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: var(--br-form);
+  border: 2px solid var(--black-25);
+  box-shadow: 0px 2px 5px var(--black-25);
+}
+
+/* Title, location, dates */
+.input-line {
+  height: 50px;
+}
+
+/* For itinerary and packing */
+.input-text {
+  height: 125px;
+}
+
+/* Form color changes while in use */
+input:focus {
+  outline-color: var(--signature-50) !important;
+}
+
+/* Decorative Panel Side */
+.gradient-side {
+  background-image: linear-gradient(rgba(250, 109, 114), rgba(196, 196, 196, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.quote-area {
+  height: 330px;
+  width: 380px;
+}
+
+#quote {
+  color: white;
+}
+
+@media (max-width: 50em){
+  .create-page {
+    margin: 50px 25px 10px 25px;
+  }
+
+  /* .input-line {
+    width: 300px;
+  } */
+
+  .input-text {
+    padding: 10px 200px 75px 10px;
+  }
+
+  .gradient-side {
+    display: none;
+  }
+}
+
+/* TODO: responsiveness fixing */
+@media (max-width: 70em){
+  .gradient-side {
+    display: none;
+  }
+}

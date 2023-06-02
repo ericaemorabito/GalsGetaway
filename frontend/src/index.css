@@ -1,6 +1,7 @@
 :root{
   --signature: #FA6D72;
   --signature-75: rgba(250, 109, 114, 0.75);
+  --signature-50: rgba(250, 109, 114, 0.50);
 
   --black-100: rgba(71, 66, 66, 1);
   --black-75: rgba(85, 80, 80, 0.75);
@@ -123,6 +124,7 @@ svg {
   font-size: var(--fs-1);
   font-weight: var(--fw-bold);
   color: var(--black-100);
+  margin-bottom: 25px;
 }
 
 .subtitle {
@@ -145,6 +147,7 @@ svg {
   border-radius: 250px;
   font-size: var(--fs-button);
   box-shadow: 0px 5px 5px var(--black-25);
+  margin-top: 25px;
 }
 
 .btn-signature {
@@ -203,34 +206,8 @@ svg {
   color: var(--signature);
 }
 
-/* Form */
-.form-label {
-  font-size: var(--fs-6);
-  color: var(--black-25);
-  font-weight: var(--fw-bold);
-}
-
-.input-line {
-  height: 50px;
-  width: 400px;
-  border-radius: var(--br-form);
-}
-
-.input-text {
-  padding: 10px 390px 200px 10px;
-  border-radius: var(--br-form);
-}
-
-.input-light {
-  color: var(--black-100);
-}
-
-@media (max-width: 50em){
-  .input-line {
-    width: 300px;
-  }
-
-  .input-text {
-    padding: 10px 200px 150px 10px;
-  }
+/* All the pages are within this div */
+.pages {
+  display: flex;
+  justify-content: center;
 }
