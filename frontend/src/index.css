@@ -216,6 +216,18 @@ svg {
   color: var(--signature);
 }
 
+/* Color changes for red buttons */
+.btn-red:hover {
+  background-color:var(--red);
+  color: white;
+}
+
+.btn-red:active {
+  background-color: var(--red-50);
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
 /* All the pages are within this div */
 .pages {
   display: flex;

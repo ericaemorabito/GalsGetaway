@@ -4,7 +4,8 @@ import Header from './components/Header'
 // pages
 import HomePage from "./pages/HomePage";
 import LandingPage from "./pages/LandingPage";
-import CreateTrip from "./pages/CreateTrip";
+import CreateTrip from "./pages/CreateTripPage";
+import ViewTrip from './pages/ViewTripPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/welcome' element={<LandingPage/>}/>
             <Route path="/" element={<HomePage />} />
             <Route path='/create' element={<CreateTrip />} />
+            <Route path='/trip/:id' element={<ViewTrip />} />
           </Routes>
         </div>
       </BrowserRouter>

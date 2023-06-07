@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const tripSchema = new Schema({
   title: { 
     type: String,
-    required: true
+    required: false
   },
   location: {
     type: String,

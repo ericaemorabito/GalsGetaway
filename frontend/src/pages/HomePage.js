@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/homePage.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [trips, setTrips] = useState(null);
@@ -24,18 +25,24 @@ const Home = () => {
       <p className="title home-title">Your Trips</p>
 
       <div className="cards-area">
-      {trips &&
+        {trips &&
           trips.map((trip) => (
+            <Link to={`/trip/${trip._id}`}>
             <div className="trip-card" key={trip._id}>
-            <div className="card-image"></div>
-            <div className="card-text">
-              <p className="text">{trip.title}</p>
-              <p className="text">{trip.date}</p>
+              <div className="card-image"></div>
+              <div className="card-text">
+               
+                  <p className="text">{trip.title}</p>
+                  <p className="text">{trip.date}</p>
+                
+              </div>
             </div>
-          </div>
-          ))}  
+            </Link>
+          ))}
       </div>
-      <button className="button btn-signature">Create a Trip</button>
+      <Link to={"/create"}>
+        <button className="button btn-signature">Create a Trip</button>
+      </Link>
     </div>
   );
 };

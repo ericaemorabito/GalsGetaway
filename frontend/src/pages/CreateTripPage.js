@@ -1,12 +1,17 @@
 // components
 import TripForm from "../components/TripForm";
-import "../styles/createTrip.css";
+import "../styles/createTripPage.css";
 
 const CreateTrip = () => {
   return (
     <div className="create-page">
       {/* Form Side */}
-      <TripForm />
+      <div className="form-side">
+        <p className="subtitle" id="create-page-title">
+          Create Trip
+        </p>
+        <TripForm />
+      </div>
 
       {/* Linear Gradient Styled Side */}
       <div className="gradient-side">

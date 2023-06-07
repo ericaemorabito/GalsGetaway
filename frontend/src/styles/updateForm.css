@@ -1,0 +1,28 @@
+.menu {
+  /* background-color: grey; */
+  display: flex;
+  justify-content: flex-end;
+  height: 5px;
+  position: relative;
+  right: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.update-btn-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  height: fit-content;
+}
+
+#download-btn {
+  /* width: 85px;
+  height: 50px; */
+  margin-left: 20px;
+}
+
+.delete-btn-area {
+  display: flex;
+  justify-content: center;
+}
