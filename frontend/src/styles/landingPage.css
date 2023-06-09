@@ -5,7 +5,7 @@
 
 /* Big Background Section */
 
-.big-background {
+.central-section {
   /* background-color: var(--signature); */
   height: 70vh;
   width: 100vw;
@@ -91,7 +91,7 @@
 
 .icon-area {
   height: 150px;
-  width: 100px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -99,12 +99,14 @@
 }
 
 .large-icon {
-  background-color: var(--signature);
+  color: white;
   height: 100px;
-  width: 100px;
+  width: 90px;
+  margin-bottom: 30px;
 }
 
 .icon-blurb {
+  text-align: center;
   color: white;
   font-size: var(--fs-5);
   font-weight: var(--fw-bold);
@@ -197,6 +199,12 @@
 
 /* Phone */
 @media (max-width: 50em) {
+  /* Central Section */
+  .central-text {
+    height: 100px;
+    width: 300px;
+  }
+
   /* Polaroid Section */
   .polaroid-section {
     height: 15vh;
@@ -210,6 +218,10 @@
     border-bottom: 15px solid white;
   }
 
+  .up {
+    bottom: 25px;
+  }
+
   /* Icon Section */
   .icon-section {
     margin: 0px 10px 0px 10px;
@@ -218,6 +230,7 @@
 
   .icon-area {
     height: 100px;
+    width: 100px;
   }
 
   .large-icon{

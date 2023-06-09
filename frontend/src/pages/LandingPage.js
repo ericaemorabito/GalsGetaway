@@ -7,19 +7,15 @@ import heart from "../images/heart.jpeg";
 import laugh from "../images/laugh.jpeg";
 import cheers from "../images/cheers.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
-import { faMessages } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { faPlane } from "@fortawesome/free-solid-svg-icons";
-
-// const talk = <FontAwesomeIcon icon={faMessages} />
-const globe = <FontAwesomeIcon icon={faEarthAmericas} />;
-const plane = <FontAwesomeIcon icon={faPlane} />;
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       {/* Big Background Section */}
-      <div className="big-background">
+      <div className="central-section">
         <p className="title central-title">Create memories to last</p>
         <div className="central-text">
           <p className="central-text text">
@@ -75,18 +71,18 @@ const LandingPage = () => {
       <div className="icon-background">
         <div className="icon-section">
           <div className="icon-area">
-            <div className="large-icon"></div>
-            <p className="icon-blurb">Have fun</p>
+            <FontAwesomeIcon icon={faHeart} className="large-icon"/>
+            <p className="icon-blurb">Make Bonding Time</p>
           </div>
 
           <div className="icon-area">
-            <div className="large-icon"></div>
-            <p className="icon-blurb">Have fun</p>
+          <FontAwesomeIcon icon={faShare} className="large-icon"/>
+            <p className="icon-blurb">Share with Friends</p>
           </div>
 
           <div className="icon-area">
-            <div className="large-icon"></div>
-            <p className="icon-blurb"> Have fun</p>
+            <FontAwesomeIcon icon={faPlane} className="large-icon" />
+            <p className="icon-blurb">Plan Adventures</p>
           </div>
         </div>
       </div>
