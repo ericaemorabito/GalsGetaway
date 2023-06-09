@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import "../styles/landingPage.css";
 // images for polaroids
 import smile from "../images/smile.jpeg";
@@ -12,9 +14,12 @@ import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { faPlane } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="landing-page">
-      {/* Big Background Section */}
+      
+      {/* Central Section */}
       <div className="central-section">
         <p className="title central-title">Create memories to last</p>
         <div className="central-text">
@@ -23,7 +28,7 @@ const LandingPage = () => {
             bachelorette party with everything you need all in one place
           </p>
         </div>
-        <button className="button btn-signature">Plan a Trip</button>
+        <button className="button btn-signature" onClick={() => {navigate('/create')}}>Plan a Trip</button>
       </div>
 
       {/* Polaroid Section */}
@@ -93,12 +98,12 @@ const LandingPage = () => {
         <div className="action-card">
           <p className="action-title">Make memories</p>
           <p className="action-text">Plan your trip and share with friends</p>
-          <button id="action-button" className="button btn-signature">
-            Plan
+          <button id="action-button" className="button btn-signature" onClick={() => {navigate('/create')}}>
+            Plan a Trip
           </button>
         </div>
         <div className="action-card">
-          <img className="action-image" src={cheers} alt="groups of friends cheersing wine "></img>
+          <img className="action-image" src={cheers} alt="groups of friends cheersing wine"></img>
         </div>
       </div>
       </div>

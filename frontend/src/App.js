@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import LandingPage from "./pages/LandingPage";
 import CreateTrip from "./pages/CreateTripPage";
 import ViewTrip from './pages/ViewTripPage';
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path='/create' element={<CreateTrip />} />
             <Route path='/trip/:id' element={<ViewTrip />} />
+            <Route path='/login' element={<LoginPage />} />
           </Routes>
         </div>
       </BrowserRouter>
