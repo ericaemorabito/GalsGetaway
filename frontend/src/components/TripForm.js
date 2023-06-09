@@ -1,11 +1,9 @@
-// TODO: FIX post request path validation required on title
-
 import { useState } from "react";
 import "../styles/tripForm.css";
 
 const TripForm = () => {
   const [title, setTitle] = useState("");
-  const [dates, setDates] = useState("");
+  const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [accomodation, setAccomodtion] = useState("");
   const [itinerary, setItinerary] = useState("");
@@ -14,12 +12,12 @@ const TripForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(title);
-    const trip = { title, dates, location, accomodation, itinerary, packing };
+    
+    const trip = { title, date, location, accomodation, itinerary, packing };
 
     const response = await fetch("/api/trips", {
       method: "POST",
-      body: JSON.stringify({ trip }),
+      body: JSON.stringify(trip),
       header: {
         "Content-Type": "application/json",
       },
@@ -29,14 +27,15 @@ const TripForm = () => {
 
     if (!response.ok) {
       setError(json.error);
-      console.log(json.error);
+      // console.log(json.error);
     }
 
     if (response.ok) {
       setError(null);
       console.log("New trip added to DB");
+      console.log(trip);
       setTitle("");
-      setDates("");
+      setDate("");
       setAccomodtion("");
       setLocation("");
       setItinerary("");
@@ -58,23 +57,23 @@ const TripForm = () => {
 
       {/* Dates  */}
       <label for="form-dates">Dates</label>
-      <input type="text" id="form-dates" className="input-line"></input>
+      <input type="text" id="form-dates" className="input-line" onChange={(e) => setDate(e.target.value)} value={date}></input>
 
       {/* Location  */}
       <label for="form-location">Location</label>
-      <input type="text" id="form-location" className="input-line"></input>
+      <input type="text" id="form-location" className="input-line" onChange={(e) => setLocation(e.target.value)} value={location}></input>
 
       {/* Accomdation  */}
       <label for="form-accomodation">Accomdation</label>
-      <input type="text" id="form-accomodation" className="input-line"></input>
+      <input type="text" id="form-accomodation" className="input-line" onChange={(e) => setAccomodtion(e.target.value)} value={accomodation}></input>
 
       {/* Itinerary  */}
       <label for="form-itinerary">Itinerary</label>
-      <input type="text" id="form-itinerary" className="input-text"></input>
+      <input type="text" id="form-itinerary" className="input-text" onChange={(e) => setItinerary(e.target.value)} value={itinerary}></input>
 
       {/* Packing  */}
       <label for="form-packing">Packing</label>
-      <input type="text" id="form-packing" className="input-text"></input>
+      <input type="text" id="form-packing" className="input-text" onChange={(e) => setPacking(e.target.value)} value={packing}></input>
 
       {/* Create new trip button --> req to DB  */}
       <div className="btn-area">

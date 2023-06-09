@@ -1,11 +1,19 @@
 import "../styles/landingPage.css";
 // images for polaroids
-import smile from '../images/smile.jpeg'
-import hike from '../images/hike.jpeg'
-import car from '../images/car.jpeg'
-import heart from '../images/heart.jpeg'
-import laugh from '../images/heart.jpeg'
-import cheers from '../images/cheers.jpeg'
+import smile from "../images/smile.jpeg";
+import hike from "../images/hike.jpeg";
+import car from "../images/car.jpeg";
+import heart from "../images/heart.jpeg";
+import laugh from "../images/laugh.jpeg";
+import cheers from "../images/cheers.jpeg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
+import { faMessages } from "@fortawesome/free-solid-svg-icons";
+import { faPlane } from "@fortawesome/free-solid-svg-icons";
+
+// const talk = <FontAwesomeIcon icon={faMessages} />
+const globe = <FontAwesomeIcon icon={faEarthAmericas} />;
+const plane = <FontAwesomeIcon icon={faPlane} />;
 
 const LandingPage = () => {
   return (
@@ -13,29 +21,91 @@ const LandingPage = () => {
       {/* Big Background Section */}
       <div className="big-background">
         <p className="title central-title">Create memories to last</p>
-        <div className='central-text'>
-          <p className="text">
-            plan your girl's trip, take your book club on the road, or plan your bachelorette party with
-            everything you need all in one place
+        <div className="central-text">
+          <p className="central-text text">
+            plan your girl's trip, take your book club on the road, or plan your
+            bachelorette party with everything you need all in one place
           </p>
         </div>
         <button className="button btn-signature">Plan a Trip</button>
       </div>
 
       {/* Polaroid Section */}
-      <div className='polaroid-section'>
-        <div className='polaroid up' style={{backgroundImage: `url(${smile})`}}>
-        </div>
-        <div className='polaroid' style={{backgroundImage: `url(${hike})`}}>
-        </div>
-        <div className='polaroid up' style={{backgroundImage: `url(${car})`}}>
-        </div>
-        <div className='polaroid' style={{backgroundImage: `url(${heart})`}}>
-        </div>
-        <div className='polaroid up' style={{backgroundImage: `url(${laugh})`}}>
+      <div className="polaroid-background">
+        <div className="polaroid-section">
+          <div className="polaroid up">
+            <img
+              className="polaroid-image"
+              src={car}
+              alt="two friends on road trip"
+            ></img>
+          </div>
+          <div className="polaroid" alt="">
+            <img
+              className="polaroid-image"
+              src={heart}
+              alt="girls making hearts with hands"
+            ></img>
+          </div>
+          <div className="polaroid up">
+            <img
+              className="polaroid-image"
+              src={smile}
+              alt="two friends smiling"
+            ></img>
+          </div>
+          <div className="polaroid">
+            <img
+              className="polaroid-image"
+              src={laugh}
+              alt="friends laughin in a tulip field"
+            ></img>
+          </div>
+          <div className="polaroid up">
+            <img
+              className="polaroid-image"
+              src={hike}
+              alt="friends hiking"
+            ></img>
+          </div>
         </div>
       </div>
 
+      {/* Icons Section */}
+      <div className="icon-background">
+        <div className="icon-section">
+          <div className="icon-area">
+            <div className="large-icon"></div>
+            <p className="icon-blurb">Have fun</p>
+          </div>
+
+          <div className="icon-area">
+            <div className="large-icon"></div>
+            <p className="icon-blurb">Have fun</p>
+          </div>
+
+          <div className="icon-area">
+            <div className="large-icon"></div>
+            <p className="icon-blurb"> Have fun</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Card Call to Act Section */}
+      <div className="action-background">
+      <div className="action-section">
+        <div className="action-card">
+          <p className="action-title">Make memories</p>
+          <p className="action-text">Plan your trip and share with friends</p>
+          <button id="action-button" className="button btn-signature">
+            Plan
+          </button>
+        </div>
+        <div className="action-card">
+          <img className="action-image" src={cheers} alt="groups of friends cheersing wine "></img>
+        </div>
+      </div>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import "../styles/tripForm.css";
 import "../styles/updateForm.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,23 +14,25 @@ const menuIcon = <FontAwesomeIcon icon={faEllipsis} />;
 const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
 
 const UpdateForm = ({ trip }) => {
-  const [title, setTitle] = useState(trip.title);
-  const [dates, setDates] = useState(trip.dates);
-  const [location, setLocation] = useState(trip.location);
-  const [accomodation, setAccomodtion] = useState(trip.accomodation);
-  const [itinerary, setItinerary] = useState(trip.itinerary);
-  const [packing, setPacking] = useState(trip.packing);
+  const navigate = useNavigate();
+
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [accomodation, setAccomodtion] = useState("");
+  const [itinerary, setItinerary] = useState("");
+  const [packing, setPacking] = useState("");
   const [error, setError] = useState(null);
   const [trash, setTrash] = useState(false);
 
-  // TODO: make update function
-  const handleSubmit = async (e) => {
+  // TODO: make PUT request
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    console.log(title);
-    const trip = { title, dates, location, accomodation, itinerary, packing };
+    
+    const trip = { title, date, location, accomodation, itinerary, packing };
 
-    const response = await fetch("/api/trips", {
-      method: "POST",
+    const response = await fetch(`/api/trips/${trip._id}`, {
+      method: "PUT",
       body: JSON.stringify({ trip }),
       header: {
         "Content-Type": "application/json",
@@ -45,18 +48,38 @@ const UpdateForm = ({ trip }) => {
 
     if (response.ok) {
       setError(null);
-      console.log("New trip added to DB");
-      setTitle("");
-      setDates("");
-      setAccomodtion("");
-      setLocation("");
-      setItinerary("");
-      setPacking("");
+      console.log("Trip updated in DB");
+      setTitle(trip.title);
+      setDate(trip.date);
+      setAccomodtion(trip.accomodation);
+      setLocation(trip.location);
+      setItinerary(trip.itinerary);
+      setPacking(trip.packing);
     }
   };
 
+  //TODO: make DELETE request NAVIGATE BACK HOME
+   const handleDelete = async () => {
+    const response = await fetch('/api/trips/' + trip._id, {
+      method: 'DELETE'
+    });
+
+    const json = await response.json();
+    
+    if (!response.ok) {
+      setError(json.error);
+      console.log(json.error);
+    }
+
+    if(response.ok){
+      console.log('Deleted the trip')
+      navigate(-1);
+    }
+
+   }
+
   return (
-    <form className="trip-form" onSubmit={handleSubmit}>
+    <form className="trip-form">
       {/* Title  */}
       <label for="form-title">Trip Title</label>
       <input
@@ -64,8 +87,8 @@ const UpdateForm = ({ trip }) => {
         id="form-title"
         className="input-line"
         onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        placeholder={title}
+        defaultValue={trip.title}
+        // placeholder={title}
       ></input>
 
       {/* Dates  */}
@@ -74,8 +97,8 @@ const UpdateForm = ({ trip }) => {
         type="text"
         id="form-dates"
         className="input-line"
-        placeholder={dates}
-        onChange={(e) => setDates(e.target.value)}
+        defaultValue={trip.date}
+        onChange={(e) => setDate(e.target.value)}
       ></input>
 
       {/* Location  */}
@@ -84,7 +107,7 @@ const UpdateForm = ({ trip }) => {
         type="text"
         id="form-location"
         className="input-line"
-        placeholder={location}
+        defaultValue={trip.location}
         onChange={(e) => setLocation(e.target.value)}
       ></input>
 
@@ -94,7 +117,7 @@ const UpdateForm = ({ trip }) => {
         type="text"
         id="form-accomodation"
         className="input-line"
-        placeholder={accomodation}
+        defaultValue={trip.accomodation}
         onChange={(e) => setAccomodtion(e.target.value)}
       ></input>
 
@@ -104,7 +127,7 @@ const UpdateForm = ({ trip }) => {
         type="text"
         id="form-itinerary"
         className="input-text"
-        placeholder={itinerary}
+        defaultValue={trip.itinerary}
         onChange={(e) => setItinerary(e.target.value)}
       ></input>
 
@@ -114,7 +137,7 @@ const UpdateForm = ({ trip }) => {
         type="text"
         id="form-packing"
         className="input-text"
-        placeholder={packing}
+        defaultValue={trip.packing}
         onChange={(e) => setPacking(e.target.value)}
       ></input>
 
@@ -133,7 +156,7 @@ const UpdateForm = ({ trip }) => {
       {/* Trash Button */}
       {trash && (
         <div className="delete-btn-area">
-          <button className="button btn-red" id="download-btn">
+          <button className="button btn-red" id="download-btn" onClick={handleDelete}>
             Delete Trip {deleteIcon}
           </button>
         </div>
@@ -141,7 +164,7 @@ const UpdateForm = ({ trip }) => {
 
       {/* Update trip button --> req to DB  */}
       <div className="update-btn-area">
-        <button className="button btn-signature">
+        <button className="button btn-signature" onClick={handleUpdate}>
           Save Changes {saveIcon}
         </button>
         <button className="button btn-light" id="download-btn">

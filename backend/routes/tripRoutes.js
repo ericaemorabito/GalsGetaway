@@ -4,7 +4,7 @@ const {
   getTrips,
   createTrip,
   updateTrip,
-  deleteTrip
+  deleteTrip,
 } = require('../controllers/tripController');
 
 const router = express.Router();
@@ -17,6 +17,9 @@ router.get('/:id', getTrip)
 
 // POST new trip
 router.post('/', createTrip)
+
+// PUT update trip
+router.put('/:id', updateTrip)
 
 // DELETE a trip
 router.delete('/:id', deleteTrip)

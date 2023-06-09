@@ -19,7 +19,7 @@ const getTrip = async(req, res) => {
   const trip = await Trips.findById(id)
 
   if(!trip){ 
-    return res.status(404),json({error: 'No such trip found'})
+    return res.status(404).json({error: 'No such trip found'})
   }
 
   res.status(200).json(trip)
@@ -66,7 +66,7 @@ const deleteTrip = async (req, res) => {
   const trip = await Trips.findOneAndRemove({_id: id})
 
   if(!trip){ 
-    return res.status(400),json({error: 'No such trip'})
+    return res.status(400).json({error: 'No such trip'})
   }
 
   res.status(200).json(trip)

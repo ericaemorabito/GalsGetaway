@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import '../styles/viewTripPage.css'
-import UpdateForm from '../components/UpdateForm'
-import smile from '../images/smile.jpeg'
+import "../styles/viewTripPage.css";
+import UpdateForm from "../components/UpdateForm";
+import smile from "../images/smile.jpeg";
 
 const ViewTrip = () => {
   const { id } = useParams();
-  const [trip, setTrip] = useState('null');
+  const [trip, setTrip] = useState("null");
 
   // Request to DB for trip based on id
   useEffect(() => {
@@ -29,20 +29,21 @@ const ViewTrip = () => {
       {/* Form Side */}
       <div className="update-form-side">
         <p className="subtitle" id="view-page-title">
-          {trip.title}          
+          {trip.title}
         </p>
-        <UpdateForm trip={trip}/>
+        <UpdateForm trip={trip} />
       </div>
 
       {/* Image & Map Side */}
       <div className="images-side">
-        <div className="trip-image" style={{backgroundImage: `url(${smile})`}}>
-          </div>
-          <div className="trip-image">
-          </div>
+        <div
+          className="trip-image"
+          style={{ backgroundImage: `url(${smile})` }}
+        ></div>
+        <div className="trip-image"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ViewTrip
+export default ViewTrip;

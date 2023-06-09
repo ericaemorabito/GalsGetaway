@@ -12,7 +12,7 @@ const tripSchema = new Schema({
     required: false
   },
   date: {
-    type: Date,
+    type: String,
     required: false
   },
   accomodation: {
