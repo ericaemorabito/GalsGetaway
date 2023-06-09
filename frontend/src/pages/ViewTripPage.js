@@ -36,10 +36,9 @@ const ViewTrip = () => {
 
       {/* Image & Map Side */}
       <div className="images-side">
-        <div
-          className="trip-image"
-          style={{ backgroundImage: `url(${smile})` }}
-        ></div>
+        <div className="trip-image">
+          <img src={smile} alt='friend smiling on beach' className="uploaded-image" ></img>
+        </div>
         <div className="trip-image"></div>
       </div>
     </div>

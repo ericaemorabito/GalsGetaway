@@ -11,7 +11,7 @@ const LoginPage = () => {
           <input type="text" name="email" placeholder="E-mail" className="login-input"></input>
           <input type="text" name="password" placeholder="Password" className="login-input"></input>
         </form>
-        <button className="button btn-light" id="login-btn"> Login </button>
+        <button className="button btn-signature" id="login-btn"> Login </button>
       </div>
     </div>
   );

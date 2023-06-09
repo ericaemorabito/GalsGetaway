@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "../styles/homePage.css";
 import { Link } from "react-router-dom";
+import Message from '../components/Message'
+import friends from '../images/friends.jpeg'
 
 const Home = () => {
   const [trips, setTrips] = useState(null);
@@ -22,6 +24,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
+      {/* <Message message={'created'}/> */}
       <p className="title home-title">Your Trips</p>
 
       <div className="cards-area">
@@ -29,7 +32,10 @@ const Home = () => {
           trips.map((trip) => (
             <Link to={`/trip/${trip._id}`}>
             <div className="trip-card" key={trip._id}>
-              <div className="card-image"></div>
+              <div className="card-image">
+                <img className="uploaded-image" src={friends} alt={trip.title}>
+                </img>
+              </div>
               <div className="card-text">
                
                   <p className="text">{trip.title}</p>

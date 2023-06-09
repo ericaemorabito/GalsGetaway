@@ -3,11 +3,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: var(--signature);
-  /* background-image: linear-gradient(
+  /* background-color: var(--signature); */
+  background-image: linear-gradient(
     rgba(250, 109, 114),
     rgba(196, 196, 196, 0.3)
-  ); */
+  );
 }
 
 .login-area {
